@@ -4,12 +4,13 @@ public class Matriser {
 	public static void main(String[] args) {
 		int[][] tabell1 = {
 				{1,2,3},
+				{2,3,3},
 				{2,3,3}
 		};
 		int[][] tabell2 = {
-				{1,2},
-				{2,3},
-				{2,3},
+				{1,2,3},
+				{2,3,3},
+				{2,3,3},
 		};
 		
 		int[][] t = multipliser(tabell1,tabell2);
@@ -120,9 +121,9 @@ public class Matriser {
 		
 		int[][] ny = new int [a.length][];
 		
-		for (int y = 0; y < a.length; y++) {
-			ny[y] = new int[b[y].length];
-		}
+		for (int y = 0; y < a.length; y++) {   
+			ny[y] = new int[a[y].length];		 //Kvifor kan eg ikkje skrive ny[y] = new int[b[y].length]; ?
+		}										 //Etter definisjonen skal det vere rett å bruke matrise b sin lengde.
 		
 		for (int w = 0; w < a.length; w++) {     //For matrix multiplication, the number of columns 
 			if (a[w].length != b.length) {       //in the first matrix must be equal to the number of rows 
