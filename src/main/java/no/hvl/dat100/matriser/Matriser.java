@@ -3,12 +3,13 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 	public static void main(String[] args) {
 		int[][] tabell1 = {
-				{1,2},
-				{2,3}
+				{1,2,3},
+				{2,3,3}
 		};
 		int[][] tabell2 = {
 				{1,2},
-				{2,3}
+				{2,3},
+				{2,3},
 		};
 		
 		int[][] t = multipliser(tabell1,tabell2);
@@ -120,13 +121,19 @@ public class Matriser {
 		int[][] ny = new int [a.length][];
 		
 		for (int y = 0; y < a.length; y++) {
-			ny[y] = new int[a[y].length];
+			ny[y] = new int[b[y].length];
+		}
+		
+		for (int w = 0; w < a.length; w++) {     //For matrix multiplication, the number of columns 
+			if (a[w].length != b.length) {       //in the first matrix must be equal to the number of rows 
+				return ny; 						 //in the second matrix. The result matrix has the number of rows 
+			} 									 //of the first and the number of columns of the second matrix.
 		}
 		
 		for (int i = 0; i < a.length; i++) {
-			for (int q = 0; q < b[0].length; q++) {
-				for (int s = 0; s < a[0].length; s++) {
-					ny[i][q] += a[i][s] * b[s][q];
+			for (int j = 0; j < b[0].length; j++) {
+				for (int k = 0; k < a[0].length; k++) {
+					ny[i][j] += a[i][k] * b[k][j];
 				}
 			}
 		}
