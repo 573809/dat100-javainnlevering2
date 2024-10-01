@@ -82,7 +82,12 @@ class MatriserEnhetsTests {
 	@Test
 	void testSpeile() {
 		
-		int[][] speilet = { {1,4,7}, {2,5,8}, {3,6,9} };
+		int[][] speilet = { {1,4,7}, 
+							{2,5,8}, 
+							{3,6,9} };
+//		int[] a0 = {1,2,3};
+//		int[] a1 = {4,5,6};
+//		int[] a2 = {7,8,9};
 			
 		int[][] speile = Matriser.speile(a);
 		
